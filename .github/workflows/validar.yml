@@ -1,0 +1,58 @@
+name: Validar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  privacidade-e-exemplo:
+    name: Privacidade e exemplo fictício
+    runs-on: ubuntu-latest
+    env:
+      SKILL: plugins/vtx/skills/landing-page
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Checar dados privados (foto, vídeo, telefone, e-mail, tokens)
+        run: python "$SKILL/scripts/checar_publicacao.py" .
+
+      - name: Gerar o exemplo fictício
+        run: >
+          python "$SKILL/scripts/gerar.py" "$SKILL/exemplo/clientes/casa-exemplo/cliente.json"
+          --equipe "$SKILL/exemplo/equipe/equipe.json" --saida "$RUNNER_TEMP/saida" --unico
+
+      - name: Verificar a página (sem navegador)
+        run: python "$SKILL/scripts/verificar.py" "$RUNNER_TEMP/saida/casa-exemplo" --sem-fotos
+
+      - name: Conferir a saudação e o artigo do exemplo
+        run: |
+          grep -q "Bem-vindas," "$RUNNER_TEMP/saida/casa-exemplo/index.html"
+          grep -q "Maria e Joana" "$RUNNER_TEMP/saida/casa-exemplo/index.html"
+          grep -q "Vamos colocar a Casa Exemplo na mesa" "$RUNNER_TEMP/saida/casa-exemplo/index.html"
+
+  manifestos:
+    name: Manifestos do plugin e do marketplace
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar o Claude Code (só para validar)
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validar o marketplace
+        run: claude plugin validate --strict .
+
+      - name: Validar o plugin
+        run: claude plugin validate --strict plugins/vtx
