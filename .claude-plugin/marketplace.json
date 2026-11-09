@@ -1,0 +1,12 @@
+﻿{
+  "name": "vortexsystems",
+  "description": "Plugins da Vortex Systems para Claude Code",
+  "owner": { "name": "Vortex Systems" },
+  "plugins": [
+    {
+      "name": "vtx",
+      "source": "./plugins/vtx",
+      "description": "Gera a landing page de boas-vindas e próximos passos de cada cliente fechado da VTX Tap (/vtx:landing-page)."
+    }
+  ]
+}

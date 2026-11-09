@@ -1,0 +1,9 @@
+﻿{
+  "name": "vtx",
+  "version": "0.1.0",
+  "description": "Ferramentas da VTX Tap para quem vende e implanta: gera a landing page de boas-vindas e próximos passos de cada cliente fechado.",
+  "author": { "name": "Vortex Systems" },
+  "homepage": "https://github.com/bfsiatools/vortexsystems-plugins",
+  "repository": "https://github.com/bfsiatools/vortexsystems-plugins",
+  "keywords": ["vtx-tap", "landing-page", "onboarding", "vendas"]
+}

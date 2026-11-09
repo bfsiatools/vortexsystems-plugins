@@ -1,0 +1,16 @@
+﻿# Dados privados e arquivos gerados: nunca entram no repositório
+landing-pages/
+saida/
+.nomes-privados.txt
+*.mp4
+*.mov
+
+# Python / Node / sistema
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Saida de testes locais
+saida-teste/

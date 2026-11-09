@@ -1,0 +1,11 @@
+﻿{
+  "pessoas": {
+    "ana": {
+      "nome": "Ana Souza",
+      "funcao": "Comercial. Seu contato direto, do início ao fim.",
+      "whatsapp": "11900000000",
+      "whatsapp_exibicao": "(11) 90000-0000",
+      "foto": "fotos/ana.png"
+    }
+  }
+}

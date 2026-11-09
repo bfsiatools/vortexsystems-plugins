@@ -1,0 +1,14 @@
+﻿{
+  "slug": "casa-exemplo",
+  "casa": "Casa Exemplo Bistrô",
+  "casa_curta": "Casa Exemplo",
+  "cidade": "Cidade Exemplo",
+  "donos": ["Maria", "Joana"],
+  "genero_donos": "f",
+  "artigo": "a",
+  "logo_cliente": "logo-exemplo.svg",
+  "vendedor": "ana",
+  "data_inicio": "2026-01-15",
+  "prazo_dias": 15
+}
+
