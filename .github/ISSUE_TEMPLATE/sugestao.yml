@@ -1,0 +1,28 @@
+name: Sugestão
+description: Uma melhoria ou um recurso novo para a skill ou para a página.
+labels: ["melhoria"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Não cole dado real (cliente, pessoa, foto, telefone). Use exemplos inventados.
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema isso resolve?
+      description: Conte a situação real (sem nomes) em que você sentiu falta.
+    validations:
+      required: true
+  - type: textarea
+    id: ideia
+    attributes:
+      label: Como você imagina que seria
+    validations:
+      required: true
+  - type: checkboxes
+    id: regras
+    attributes:
+      label: Confirmações
+      options:
+        - label: Não envolve preço, promessa de resultado ou depoimento na página.
+        - label: Não envolve dado pessoal ou de cliente dentro do plugin.

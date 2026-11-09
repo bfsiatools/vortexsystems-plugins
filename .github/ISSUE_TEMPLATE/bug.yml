@@ -1,0 +1,43 @@
+﻿name: Algo deu errado
+description: A skill ou a página gerada não se comportou como esperado.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Antes de escrever:** não cole nome de cliente, foto, telefone ou e-mail pessoal. Reproduza o problema com a casa fictícia do exemplo (`Casa Exemplo`) e descreva o resto com suas palavras.
+  - type: input
+    id: versao
+    attributes:
+      label: Versão do plugin
+      description: "Saída de `claude plugin list` (por exemplo, vtx 0.1.0)."
+    validations:
+      required: true
+  - type: dropdown
+    id: sistema
+    attributes:
+      label: Sistema
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que você esperava
+    validations:
+      required: true
+  - type: textarea
+    id: aconteceu
+    attributes:
+      label: O que aconteceu
+      description: Se houver mensagem de erro, cole só a mensagem (sem caminhos com seu nome de usuário).
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir
+      placeholder: "1. Rodei /vtx:landing-page\n2. Respondi ...\n3. ..."
+    validations:
+      required: true
+
