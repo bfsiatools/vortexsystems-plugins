@@ -43,7 +43,8 @@ Arquivo UTF-8 em `landing-pages/clientes/<slug>/cliente.json`. Os arquivos citad
 | `prazo_dias` | não (15) | previsão de chegada das plaquinhas |
 | `estado_passos` | não | 4 itens entre `feito`, `agora`, `depois` |
 | `tela_previa`, `tela_legenda` | não | print da página da casa; a página **corta o trecho de baixo** (aspect 734:1100) para não mostrar valores |
-| `video`, `poster`, `video_legenda` | não | mp4 e imagem de capa; só aparecem se houver |
+| `video`, `poster`, `video_legenda` | não | mp4 e imagem de capa; só aparecem se houver. **Quem preenche é `scripts/gerar_video.py`** (quando o usuário quer o vídeo); sem vídeo ficam vazios e a página sai com a mesma estrutura |
+| `video_realces` | não | só para print fora do padrão (734×1280). `{"banner": [esq, topo, larg, alt], "logo": [...], "cardapio": [...] ou null}` em coordenadas do cartão de 640 px de largura (posição no print × 640 ÷ largura do print). Padrão aprovado: banner `[0,0,640,275]`, logo `[14,196,164,164]`, cardápio `[26,702,589,251]` |
 | `site_rodape`, `insta`, `email_time` | não | dados da empresa (padrões da VTX) |
 
 ## equipe.json
@@ -76,6 +77,9 @@ modelo/index.html             a página (template com {{placeholders}})
 modelo/assets/fonts           Big Shoulders Display, Schibsted Grotesk, IBM Plex Mono + licenças OFL
 modelo/assets/marca           logo VTX Tap (negativo), ícone, endosso "uma solução VORTEX"
 scripts/gerar.py              gera a página
+scripts/gerar_video.py        gera o vídeo da casa (logo + print + número do vendedor) a partir de modelo-video/
+modelo-video/                 projeto HyperFrames do vídeo (3D, voz Emmett sem o nome da casa, legendas); marcadores {{LOGO}}, {{TELA}}, {{WA_EXIB}}, {{CASA}}
+modelo-video/fonte/           scripts que montaram voz, tempos e legendas (os áudios de origem ficam no projeto privado do mantenedor)
 scripts/verificar.py          confere + fotos de conferência (sem servidor)
 scripts/verificar-navegador.cjs  teste de navegador (opcional, Playwright)
 scripts/checar_publicacao.py  barra dado pessoal antes de publicar a skill

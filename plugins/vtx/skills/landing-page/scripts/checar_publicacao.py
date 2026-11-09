@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Antes de tornar a skill publica: procura dados pessoais, de cliente ou segredos dentro da pasta da skill.
 
 Uso:  py -I -X utf8 checar_publicacao.py [PASTA_DA_SKILL]      (padrao: a pasta acima de scripts/)
@@ -63,10 +63,12 @@ def main():
                     trecho = m.group(0)
                     if rot == "telefone" and re.fullmatch(r"\d{4}[-\s]?\d{4}", trecho):
                         continue
+                    if rot.startswith("telefone") and ext in (".js", ".css") and re.fullmatch(r"\d+", trecho):
+                        continue                               # constante numerica em codigo (ex.: semente de hash), sem mascara de telefone
                     if re.sub(r"\D", "", trecho) in ("11900000000", "5511900000000", "900000000"):   # numero ficticio do exemplo, em qualquer arquivo
                         continue
                     achados.append((rel, "%s: %s" % (rot, trecho)))
-            for e in re.findall(r"[\w.+-]+@[\w-]+\.[\w.-]+", t):
+            for e in re.findall(r"[\w.+-]+@[\w-]+\.[A-Za-z][\w.-]*", t):
                 if e.lower() not in PERMITIDOS_EMAIL and not e.lower().endswith("@exemplo.com"):
                     achados.append((rel, "e-mail: " + e))
             for n in nomes:

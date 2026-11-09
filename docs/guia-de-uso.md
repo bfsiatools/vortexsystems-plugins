@@ -19,7 +19,8 @@ Tenha à mão:
 3. **A logo.** Arraste a imagem na conversa ou cole o caminho. A skill avisa se estiver pequena ou se for clara demais.
 4. **O(s) dono(s) e o gênero**, para a saudação certa: *Bem-vindo*, *Bem-vinda*, *Bem-vindos* ou *Bem-vindas*.
 5. **Quem fechou o contrato.** Escolha na lista ou "outra pessoa". Se for nova, a skill pede nome, **foto** e **WhatsApp com DDD** e cadastra. Depois mostra "nome · número" e pede confirmação: é exatamente o que o cliente verá.
-6. **Opcionais** (só se você pedir): data do fechamento (padrão: hoje), prazo das plaquinhas (padrão: 15 dias), vídeo, prévia da tela da casa e uma frase de elogio para a carta.
+6. **O vídeo.** A skill **sempre pergunta** se você quer o vídeo dos próximos passos. Com **sim**, peça o **print da página da casa no VTX Tap** (vertical, ~734×1280, com banner, logo e card Cardápio): a skill gera o vídeo da casa em 2 a 3 minutos. Com **não**, a página sai com a mesma estrutura, só sem o vídeo.
+7. **Opcionais** (só se você pedir): data do fechamento (padrão: hoje), prazo das plaquinhas (padrão: 15 dias), prévia da tela da casa (quando não há vídeo) e uma frase de elogio para a carta.
 
 A skill **não gera com lacuna**: se faltar logo, foto ou número, ela para e pede.
 

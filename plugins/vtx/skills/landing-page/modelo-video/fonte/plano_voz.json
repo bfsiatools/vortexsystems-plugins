@@ -1,0 +1,182 @@
+[
+ {
+  "chave": "u2",
+  "texto": "fechou com a VTX Tap.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 1.209,
+  "b": 3.053,
+  "ini": 0.4,
+  "fim": 2.244,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "u3",
+  "texto": "E agora?",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 3.398,
+  "b": 4.011,
+  "ini": 2.589,
+  "fim": 3.202,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "u4",
+  "texto": "São quatro passos.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 4.317,
+  "b": 5.673,
+  "ini": 3.508,
+  "fim": 4.864,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "um",
+  "texto": "Um:",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 5.988,
+  "b": 6.269,
+  "ini": 5.664,
+  "fim": 5.945,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "c1",
+  "texto": "você manda três coisas.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 12.286,
+  "b": 13.906,
+  "ini": 6.545,
+  "fim": 8.165,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "c2",
+  "texto": "As imagens do cardápio,",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 14.151,
+  "b": 15.517,
+  "ini": 8.515,
+  "fim": 9.881,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "c3",
+  "texto": "uma imagem para o banner e a sua logo.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 15.734,
+  "b": 17.992,
+  "ini": 10.231,
+  "fim": 12.489,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "c4",
+  "texto": "A gente cadastra tudo.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 18.235,
+  "b": 19.589,
+  "ini": 12.839,
+  "fim": 14.193,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "dois",
+  "texto": "Dois:",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 11.49,
+  "b": 12.039,
+  "ini": 15.093,
+  "fim": 15.642,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "h24",
+  "texto": "Em até vinte e quatro horas depois de receber, a página do seu restaurante fica pronta.",
+  "fonte": "assets/voz-tts-24h.mp3",
+  "a": 0.0,
+  "b": 5.331,
+  "ini": 16.242,
+  "fim": 21.573,
+  "ganho_db": 1.2
+ },
+ {
+  "chave": "p1",
+  "texto": "É assim que ela vai ficar,",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 8.655,
+  "b": 9.957,
+  "ini": 21.923,
+  "fim": 23.225,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "p2",
+  "texto": "com a sua cara.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 10.15,
+  "b": 11.195,
+  "ini": 23.425,
+  "fim": 24.47,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "tres",
+  "texto": "Três:",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 19.873,
+  "b": 20.382,
+  "ini": 25.37,
+  "fim": 25.879,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "d15",
+  "texto": "em quinze dias, as plaquinhas chegam.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 20.624,
+  "b": 22.883,
+  "ini": 26.479,
+  "fim": 28.738,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "quatro",
+  "texto": "Quatro:",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 23.219,
+  "b": 23.668,
+  "ini": 29.638,
+  "fim": 30.087,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "trein",
+  "texto": "quando chegarem, a gente marca o treinamento com a sua equipe e mostra todos os detalhes.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 23.907,
+  "b": 27.66,
+  "ini": 30.687,
+  "fim": 34.44,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "f1",
+  "texto": "Qualquer dúvida,",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 27.887,
+  "b": 28.938,
+  "ini": 35.54,
+  "fim": 36.591,
+  "ganho_db": 0.0
+ },
+ {
+  "chave": "f2",
+  "texto": "é só me chamar no WhatsApp.",
+  "fonte": "assets/voz-tts-original.mp3",
+  "a": 29.185,
+  "b": 31.6,
+  "ini": 36.891,
+  "fim": 39.306,
+  "ganho_db": 0.0
+ }
+]

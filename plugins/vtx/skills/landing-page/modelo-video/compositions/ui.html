@@ -1,0 +1,147 @@
+<template>
+  <style>
+    @font-face { font-family: "Schibsted Grotesk"; src: url("assets/fonts/SchibstedGrotesk-Variable.ttf") format("truetype"); font-weight: 400 900; font-style: normal; }
+    @font-face { font-family: "Big Shoulders Display"; src: url("assets/fonts/BigShouldersDisplay-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: "IBM Plex Mono"; src: url("assets/fonts/IBMPlexMono-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; }
+    #root { position: absolute; inset: 0; }
+    /* todos os blocos duram o video inteiro; quem decide quando aparecem sao os tweens (tempos de assets/cues.js) */
+    .band { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; align-items: center; }
+    .tile { background: #ffffff; border-radius: 34px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(12, 8, 32, 0.35); }
+    .x { font: 800 64px "Schibsted Grotesk", sans-serif; color: #f1ecff; margin: 0 26px; text-shadow: 0 3px 14px rgba(12,8,32,.6); }
+    #u-fechou { font: 900 300px/0.9 "Big Shoulders Display", sans-serif; color: #fff; letter-spacing: 0.01em; -webkit-text-stroke: 16px #140b33; paint-order: stroke fill; text-transform: uppercase; opacity: 0; }
+    #u-fechou b { color: #ffc61a; }
+    .st { width: 150px; height: 150px; border-radius: 36px; background: #fff; color: #140b33; margin: 0 13px; display: flex; align-items: center; justify-content: center;
+          font: 900 96px/1 "Big Shoulders Display", sans-serif; box-shadow: 0 10px 28px rgba(12,8,32,.4); position: relative; opacity: 0; }
+    .st .n, .st .ok { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .st .ok { opacity: 0; background: #4fd196; border-radius: 36px; color: #0f3222; }
+    .st .ok svg { width: 86px; height: 86px; }
+    .pill { display: inline-flex; align-items: center; gap: 18px; background: #fff; color: #140b33; border-radius: 999px; padding: 16px 38px 16px 28px;
+            font: 800 44px/1 "Schibsted Grotesk", sans-serif; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 10px 28px rgba(12,8,32,.4); white-space: nowrap; opacity: 0; }
+    .pill i { width: 22px; height: 22px; border-radius: 50%; background: #7d27fc; display: inline-block; }
+    .pill.sm { font-size: 40px; padding: 12px 28px 12px 22px; box-shadow: 0 6px 18px rgba(12,8,32,.45); opacity: 1; }
+    #u-dim { position: absolute; inset: 0; background: rgba(20, 11, 51, 0.58); opacity: 0; }
+    #u-card { position: absolute; left: 220px; top: 556px; width: 640px; height: {{CARD_H}}px; border-radius: 46px; border: 8px solid #fff; overflow: hidden; background: #0c0820; box-shadow: 0 24px 60px rgba(12,8,32,.6); opacity: 0; }
+    #u-card img { position: absolute; left: 0; top: 0; width: 640px; height: {{IMG_H}}px; }
+    .hl { position: absolute; border: 7px solid #a874ff; border-radius: 26px; box-shadow: 0 0 0 4px rgba(20,11,51,.55); opacity: 0; }
+    .hl.round { border-radius: 50%; }
+    .lab { position: absolute; opacity: 0; }
+    .chk { position: absolute; width: 74px; height: 74px; border-radius: 50%; background: #4fd196; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(12,8,32,.5); opacity: 0; }
+    .chk svg { width: 44px; height: 44px; }
+    #u-count { position: absolute; left: 0; top: 560px; width: 1080px; height: 330px; }
+    #u-count span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 900 330px/1 "Big Shoulders Display", sans-serif; color: #fff; -webkit-text-stroke: 16px #140b33; paint-order: stroke fill; opacity: 0; }
+    .cta { background: #ffc61a; color: #1d1400; border-radius: 999px; padding: 30px 62px; font: 800 56px/1 "Schibsted Grotesk", sans-serif; box-shadow: 0 14px 36px rgba(12,8,32,.5); white-space: nowrap; opacity: 0; }
+    .num { font: 600 54px/1 "IBM Plex Mono", monospace; color: #fff; letter-spacing: 0.02em; background: #140b33; border-radius: 999px; padding: 20px 46px; box-shadow: 0 10px 28px rgba(12,8,32,.45); opacity: 0; }
+    #u-end { opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="ui" data-width="1080" data-height="1920">
+
+    <!-- escurece so o mundo 3D enquanto a tela do cliente aparece (fica por baixo da trilha e das etiquetas) -->
+    <div id="a-dim" class="clip" data-start="0" data-duration="41.41" data-track-index="6" style="position:absolute;inset:0;"><div id="u-dim"></div></div>
+
+    <div id="a-fechou" class="band clip" data-start="0" data-duration="41.41" data-track-index="1" style="top: 560px;"><div id="u-fechou">Fecho<b>u.</b></div></div>
+    <div id="a-lock" class="band clip" data-start="0" data-duration="41.41" data-track-index="2" style="top: 290px;">
+      <div id="u-lock" style="display:flex;align-items:center;opacity:0;">
+        <div class="tile" style="width: 340px; height: 150px;"><img src="assets/marca/vtx-tap-cor.svg" style="width: 240px;" alt="VTX Tap" /></div>
+        <div class="x">×</div>
+        <div class="tile" style="width: 150px; height: 150px;"><img src="assets/cliente/{{LOGO}}" style="width: 126px; height: 126px;" alt="{{CASA}}" /></div>
+      </div>
+    </div>
+
+    <div id="a-trilha" class="band clip" data-start="0" data-duration="41.41" data-track-index="3" style="top: 290px;">
+      <div id="u-trilha" style="display:flex;">
+        <div class="st" id="st1"><div class="n">1</div><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+        <div class="st" id="st2"><div class="n">2</div><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+        <div class="st" id="st3"><div class="n">3</div><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+        <div class="st" id="st4"><div class="n">4</div><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+      </div>
+    </div>
+
+    <div id="a-p1" class="band clip" data-start="0" data-duration="41.41" data-track-index="4" style="top: 456px;"><div class="pill" id="u-p1"><i></i>3 coisas</div></div>
+    <div id="a-p2" class="band clip" data-start="0" data-duration="41.41" data-track-index="4" style="top: 456px;"><div class="pill" id="u-p2"><i></i>Sua página em 24 h</div></div>
+    <div id="a-p3" class="band clip" data-start="0" data-duration="41.41" data-track-index="4" style="top: 456px;"><div class="pill" id="u-p3"><i></i>15 dias</div></div>
+    <div id="a-p4" class="band clip" data-start="0" data-duration="41.41" data-track-index="4" style="top: 456px;"><div class="pill" id="u-p4"><i></i>Treinamento</div></div>
+
+    <div id="a-card" class="clip" data-start="0" data-duration="41.41" data-track-index="7" style="position:absolute;inset:0;">
+      <div id="u-card">
+        <!-- recorte intencional: a imagem e mais alta que o cartao para cortar o trecho com valor em reais -->
+        <img src="assets/cliente/{{TELA}}" alt="Página da casa" data-layout-allow-overflow />
+        <div class="hl" id="h-card" style="{{ST_H_CARD}}"></div>
+        <div class="lab" id="l-card" style="{{ST_L_CARD}}"><div class="pill sm"><i></i>Cardápio</div></div>
+        <div class="chk" id="c-card" style="{{ST_C_CARD}}"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <div class="hl" id="h-ban" style="{{ST_H_BAN}} border-radius: 0;"></div>
+        <div class="lab" id="l-ban" style="{{ST_L_BAN}}"><div class="pill sm"><i></i>Banner</div></div>
+        <div class="chk" id="c-ban" style="{{ST_C_BAN}}"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <div class="hl round" id="h-logo" style="{{ST_H_LOGO}}"></div>
+        <div class="lab" id="l-logo" style="{{ST_L_LOGO}}"><div class="pill sm"><i></i>Logo</div></div>
+        <div class="chk" id="c-logo" style="{{ST_C_LOGO}}"><svg viewBox="0 0 24 24" fill="none" stroke="#0f3222" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
+    </div>
+
+    <div id="a-count" class="clip" data-start="0" data-duration="41.41" data-track-index="8" style="position:absolute;inset:0;"><div id="u-count"></div></div>
+
+    <div id="a-cta" class="band clip" data-start="0" data-duration="41.41" data-track-index="9" style="top: 1236px;"><div class="cta" id="u-cta">Chamar no WhatsApp</div></div>
+    <div id="a-num" class="band clip" data-start="0" data-duration="41.41" data-track-index="9" style="top: 1396px;"><div class="num" id="u-num">{{WA_EXIB}}</div></div>
+    <div id="a-end" class="band clip" data-start="0" data-duration="41.41" data-track-index="9" style="top: 1680px;"><img id="u-end" src="assets/marca/endosso-negativo.svg" style="width: 380px;" alt="uma solução VORTEX" /></div>
+  </div>
+
+  <script>
+    const C = window.CUES;
+    const tl = gsap.timeline({ paused: true });
+    const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+    const pop = (sel, t, y = 50, d = 0.6) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: d, ease: EASE }, t);
+    const out = (sel, t, d = 0.3) => tl.to(sel, { opacity: 0, duration: d, ease: "power1.in" }, t);
+
+    /* abertura: "FECHOU." entra junto com a palavra falada; lockup VTX Tap x logo da casa */
+    tl.fromTo("#u-fechou", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.5, ease: EASE }, C.fechou_ini);
+    out("#u-fechou", C.fechou_fim, 0.3);
+    pop("#u-lock", 0.05, 50, 0.5);
+    out("#u-lock", C.lock_fim, 0.3);
+
+    /* trilha dos 4 passos: estoura um a um em "quatro passos" e acompanha o passo ativo */
+    ["#st1", "#st2", "#st3", "#st4"].forEach((s, i) => tl.fromTo(s, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: EASE }, C.tiles[i]));
+    const ativo = (s, ini, fim) => {
+      tl.to(s, { backgroundColor: "#ffc61a", scale: 1.1, duration: 0.3, ease: EASE }, ini);
+      tl.to(s, { backgroundColor: "#ffffff", scale: 1, duration: 0.25, ease: "power2.out" }, fim);
+      tl.to(s + " .n", { opacity: 0, duration: 0.2 }, fim);
+      tl.to(s + " .ok", { opacity: 1, duration: 0.25 }, fim);
+    };
+    ativo("#st1", C.p1_ini, C.p1_fim); ativo("#st2", C.p2_ini, C.p2_fim); ativo("#st3", C.p3_ini, C.p3_fim); ativo("#st4", C.p4_ini, C.p4_fim);
+    out("#u-trilha", C.trilha_fim, 0.35);
+
+    /* etiquetas por passo */
+    [["#u-p1", C.p1_ini + 0.05, C.p1_fim - 0.1], ["#u-p2", C.p2_ini + 0.05, C.p2_fim - 0.1], ["#u-p3", C.p3_ini + 0.05, C.p3_fim - 0.1], ["#u-p4", C.p4_ini + 0.05, C.p4_fim - 0.1]]
+      .forEach(([s, a, b]) => { pop(s, a, 40, 0.5); out(s, b, 0.25); });
+
+    /* tela real da pagina do cliente (plana): aparece no passo 1 com os tres itens e fica no passo 2 como "e assim que ela vai ficar" */
+    tl.fromTo("#u-dim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, C.dim_ini);
+    out("#u-dim", C.dim_fim, 0.4);
+    tl.fromTo("#u-card", { opacity: 0, y: 70, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: EASE }, C.cartao_ini);
+    out("#u-card", C.cartao_fim, 0.35);
+    const item = (h, l, c, ini, fim) => {
+      tl.fromTo(h, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.4, ease: EASE }, ini);
+      tl.fromTo(l, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: EASE }, ini + 0.05);
+      tl.fromTo(c, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: EASE }, fim);
+    };
+    item("#h-card", "#l-card", "#c-card", C.hl_cardapio[0], C.hl_cardapio[1]);
+    item("#h-ban", "#l-ban", "#c-ban", C.hl_banner[0], C.hl_banner[1]);
+    item("#h-logo", "#l-logo", "#c-logo", C.hl_logo[0], C.hl_logo[1]);
+    // ao comecar o passo 2 a tela fica limpa
+    ["#h-card", "#l-card", "#c-card", "#h-ban", "#l-ban", "#c-ban", "#h-logo", "#l-logo", "#c-logo"].forEach((s) => tl.to(s, { opacity: 0, duration: 0.3, ease: "power1.in" }, C.limpa_realces));
+
+    /* contador 15 -> 0 (cada numero e um elemento ligado/desligado: seguro para seek) */
+    const cont = document.getElementById("u-count");
+    const passo = (C.contador[1] - C.contador[0]) / 16;
+    for (let n = 15; n >= 0; n--) {
+      const sp = document.createElement("span"); sp.id = "n" + n; sp.textContent = String(n); cont.appendChild(sp);
+      const t0 = C.contador[0] + (15 - n) * passo, t1 = t0 + passo;
+      tl.set(sp, { opacity: 1 }, t0);
+      if (n > 0) tl.set(sp, { opacity: 0 }, t1); else tl.to(sp, { opacity: 0, duration: 0.3, ease: "power1.in" }, t1);
+    }
+
+    /* chamada final */
+    pop("#u-cta", C.cta_ini, 50, 0.6); pop("#u-num", C.cta_ini + 0.3, 40, 0.5); pop("#u-end", C.cta_ini + 1.0, 30, 0.5);
+    window.__timelines["ui"] = tl;
+  </script>
+</template>
+

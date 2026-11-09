@@ -8,6 +8,7 @@ Cada arquivo explica **uma** decisão de fundo e o **porquê**, para quem chegar
 | [0002](0002-marketplace-com-plugins-em-subpasta.md) | Marketplace com plugins em subpasta e nomes permanentes | aceita |
 | [0003](0003-pagina-estatica-de-um-arquivo-so.md) | Página estática, de um arquivo só, sem servidor | aceita |
 | [0004](0004-so-afirmar-o-que-esta-confirmado.md) | Só afirmar o que está confirmado e perguntar em vez de supor | aceita |
+| [0005](0005-video-opcional-com-voz-sem-o-nome-da-casa.md) | Vídeo opcional por casa, com voz que não fala o nome da casa | aceita |
 
 ## Como registrar uma decisão nova
 

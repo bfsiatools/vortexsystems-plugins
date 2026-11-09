@@ -2,7 +2,7 @@
 
 Marketplace de plugins da **Vortex Systems** para o [Claude Code](https://code.claude.com). Hoje reúne um plugin, o **`vtx`**, para quem vende e implanta a **VTX Tap**.
 
-> Versão atual: **0.1.0** · [Histórico de mudanças](plugins/vtx/CHANGELOG.md)
+> Versão atual: **0.2.0** · [Histórico de mudanças](plugins/vtx/CHANGELOG.md)
 
 ## O que tem
 

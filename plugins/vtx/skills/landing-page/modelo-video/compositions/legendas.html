@@ -1,0 +1,151 @@
+<template>
+  <style>
+    @font-face { font-family: "Schibsted Grotesk"; src: url("assets/fonts/SchibstedGrotesk-Variable.ttf") format("truetype"); font-weight: 400 900; font-style: normal; }
+    #root { position: absolute; inset: 0; }
+    /* Legenda de UMA palavra (gramatica do estilo "desmontando o mundo", nas cores e fonte da VTX):
+       branco com contorno noite, sem placa; palavra-chave em ouro. Base da zona de legenda em y ~1600. */
+    .grp { position: absolute; left: 0; width: 1080px; top: 1530px; height: 160px; display: flex; align-items: center; justify-content: center; padding: 0 60px; text-align: center; opacity: 0; }
+    .grp > span {
+      display: inline-block; font-family: "Schibsted Grotesk", system-ui, sans-serif; font-weight: 900; font-size: 112px; line-height: 1.05;
+      color: #ffffff; letter-spacing: -0.015em; -webkit-text-stroke: 14px #140b33; paint-order: stroke fill; text-stroke: 14px #140b33;
+    }
+    .grp .k { color: #ffc61a; font-weight: 900; }
+  </style>
+
+  <div id="root" data-composition-id="legendas" data-width="1080" data-height="1920">
+    <div id="l-g1" class="grp clip" data-start="0.400" data-duration="0.441" data-track-index="1"><span><b class="k">fechou</b></span></div>
+    <div id="l-g2" class="grp clip" data-start="0.861" data-duration="0.441" data-track-index="1"><span>com a</span></div>
+    <div id="l-g3" class="grp clip" data-start="1.322" data-duration="0.672" data-track-index="1"><span><b class="k">VTX</b></span></div>
+    <div id="l-g4" class="grp clip" data-start="2.014" data-duration="0.350" data-track-index="1"><span><b class="k">Tap</b></span></div>
+    <div id="l-g5" class="grp clip" data-start="2.589" data-duration="0.713" data-track-index="1"><span>E agora?</span></div>
+    <div id="l-g6" class="grp clip" data-start="3.508" data-duration="0.271" data-track-index="1"><span>São</span></div>
+    <div id="l-g7" class="grp clip" data-start="3.779" data-duration="0.523" data-track-index="1"><span><b class="k">quatro</b></span></div>
+    <div id="l-g8" class="grp clip" data-start="4.322" data-duration="0.642" data-track-index="1"><span>passos</span></div>
+    <div id="l-g9" class="grp clip" data-start="5.664" data-duration="0.381" data-track-index="1"><span><b class="k">Um</b></span></div>
+    <div id="l-g10" class="grp clip" data-start="6.545" data-duration="0.443" data-track-index="1"><span>você</span></div>
+    <div id="l-g11" class="grp clip" data-start="7.008" data-duration="0.443" data-track-index="1"><span>manda</span></div>
+    <div id="l-g12" class="grp clip" data-start="7.471" data-duration="0.231" data-track-index="1"><span><b class="k">três</b></span></div>
+    <div id="l-g13" class="grp clip" data-start="7.702" data-duration="0.563" data-track-index="1"><span>coisas</span></div>
+    <div id="l-g14" class="grp clip" data-start="8.515" data-duration="0.663" data-track-index="1"><span>As imagens</span></div>
+    <div id="l-g15" class="grp clip" data-start="9.198" data-duration="0.783" data-track-index="1"><span>do <b class="k">cardápio</b></span></div>
+    <div id="l-g16" class="grp clip" data-start="10.231" data-duration="0.733" data-track-index="1"><span>uma imagem</span></div>
+    <div id="l-g17" class="grp clip" data-start="10.984" data-duration="0.431" data-track-index="1"><span>para o</span></div>
+    <div id="l-g18" class="grp clip" data-start="11.435" data-duration="0.301" data-track-index="1"><span><b class="k">banner</b></span></div>
+    <div id="l-g19" class="grp clip" data-start="11.736" data-duration="0.301" data-track-index="1"><span>e a</span></div>
+    <div id="l-g20" class="grp clip" data-start="12.037" data-duration="0.552" data-track-index="1"><span>sua <b class="k">logo</b></span></div>
+    <div id="l-g21" class="grp clip" data-start="12.839" data-duration="0.488" data-track-index="1"><span>A gente</span></div>
+    <div id="l-g22" class="grp clip" data-start="13.347" data-duration="0.487" data-track-index="1"><span>cadastra</span></div>
+    <div id="l-g23" class="grp clip" data-start="13.854" data-duration="0.439" data-track-index="1"><span>tudo</span></div>
+    <div id="l-g24" class="grp clip" data-start="15.093" data-duration="0.649" data-track-index="1"><span><b class="k">Dois</b></span></div>
+    <div id="l-g25" class="grp clip" data-start="16.242" data-duration="0.513" data-track-index="1"><span>Em até</span></div>
+    <div id="l-g26" class="grp clip" data-start="16.775" data-duration="0.356" data-track-index="1"><span>vinte</span></div>
+    <div id="l-g27" class="grp clip" data-start="17.131" data-duration="0.513" data-track-index="1"><span>e <b class="k">quatro</b></span></div>
+    <div id="l-g28" class="grp clip" data-start="17.664" data-duration="0.355" data-track-index="1"><span><b class="k">horas</b></span></div>
+    <div id="l-g29" class="grp clip" data-start="18.019" data-duration="0.355" data-track-index="1"><span>depois</span></div>
+    <div id="l-g30" class="grp clip" data-start="18.374" data-duration="0.691" data-track-index="1"><span>de receber</span></div>
+    <div id="l-g31" class="grp clip" data-start="19.085" data-duration="0.691" data-track-index="1"><span>a <b class="k">página</b></span></div>
+    <div id="l-g32" class="grp clip" data-start="19.796" data-duration="0.355" data-track-index="1"><span>do seu</span></div>
+    <div id="l-g33" class="grp clip" data-start="20.151" data-duration="0.691" data-track-index="1"><span><b class="k">restaurante</b></span></div>
+    <div id="l-g34" class="grp clip" data-start="20.862" data-duration="0.356" data-track-index="1"><span>fica</span></div>
+    <div id="l-g35" class="grp clip" data-start="21.218" data-duration="0.455" data-track-index="1"><span><b class="k">pronta</b></span></div>
+    <div id="l-g36" class="grp clip" data-start="21.923" data-duration="0.414" data-track-index="1"><span>É assim</span></div>
+    <div id="l-g37" class="grp clip" data-start="22.357" data-duration="0.414" data-track-index="1"><span>que ela</span></div>
+    <div id="l-g38" class="grp clip" data-start="22.791" data-duration="0.534" data-track-index="1"><span>vai ficar</span></div>
+    <div id="l-g39" class="grp clip" data-start="23.425" data-duration="0.398" data-track-index="1"><span>com a</span></div>
+    <div id="l-g40" class="grp clip" data-start="23.843" data-duration="0.727" data-track-index="1"><span>sua cara</span></div>
+    <div id="l-g41" class="grp clip" data-start="25.370" data-duration="0.609" data-track-index="1"><span><b class="k">Três</b></span></div>
+    <div id="l-g42" class="grp clip" data-start="26.479" data-duration="0.658" data-track-index="1"><span>em <b class="k">quinze</b></span></div>
+    <div id="l-g43" class="grp clip" data-start="27.157" data-duration="0.226" data-track-index="1"><span>dias</span></div>
+    <div id="l-g44" class="grp clip" data-start="27.383" data-duration="0.883" data-track-index="1"><span>as <b class="k">plaquinhas</b></span></div>
+    <div id="l-g45" class="grp clip" data-start="28.286" data-duration="0.552" data-track-index="1"><span>chegam</span></div>
+    <div id="l-g46" class="grp clip" data-start="29.638" data-duration="0.549" data-track-index="1"><span><b class="k">Quatro</b></span></div>
+    <div id="l-g47" class="grp clip" data-start="30.687" data-duration="0.250" data-track-index="1"><span>quando</span></div>
+    <div id="l-g48" class="grp clip" data-start="30.937" data-duration="0.375" data-track-index="1"><span>chegarem</span></div>
+    <div id="l-g49" class="grp clip" data-start="31.312" data-duration="0.376" data-track-index="1"><span>a gente</span></div>
+    <div id="l-g50" class="grp clip" data-start="31.688" data-duration="0.250" data-track-index="1"><span>marca</span></div>
+    <div id="l-g51" class="grp clip" data-start="31.938" data-duration="0.605" data-track-index="1"><span>o <b class="k">treinamento</b></span></div>
+    <div id="l-g52" class="grp clip" data-start="32.563" data-duration="0.251" data-track-index="1"><span>com a</span></div>
+    <div id="l-g53" class="grp clip" data-start="32.814" data-duration="0.480" data-track-index="1"><span>sua equipe</span></div>
+    <div id="l-g54" class="grp clip" data-start="33.314" data-duration="0.375" data-track-index="1"><span>e mostra</span></div>
+    <div id="l-g55" class="grp clip" data-start="33.689" data-duration="0.251" data-track-index="1"><span>todos</span></div>
+    <div id="l-g56" class="grp clip" data-start="33.940" data-duration="0.600" data-track-index="1"><span>os detalhes</span></div>
+    <div id="l-g57" class="grp clip" data-start="35.540" data-duration="0.400" data-track-index="1"><span>Qualquer</span></div>
+    <div id="l-g58" class="grp clip" data-start="35.960" data-duration="0.731" data-track-index="1"><span><b class="k">dúvida</b></span></div>
+    <div id="l-g59" class="grp clip" data-start="36.891" data-duration="0.517" data-track-index="1"><span>é só</span></div>
+    <div id="l-g60" class="grp clip" data-start="37.428" data-duration="0.785" data-track-index="1"><span>me chamar</span></div>
+    <div id="l-g61" class="grp clip" data-start="38.233" data-duration="1.173" data-track-index="1"><span>no <b class="k">WhatsApp</b></span></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const grupos = [
+      ["#l-g1", 0.400, 0.441],
+      ["#l-g2", 0.861, 0.441],
+      ["#l-g3", 1.322, 0.672],
+      ["#l-g4", 2.014, 0.350],
+      ["#l-g5", 2.589, 0.713],
+      ["#l-g6", 3.508, 0.271],
+      ["#l-g7", 3.779, 0.523],
+      ["#l-g8", 4.322, 0.642],
+      ["#l-g9", 5.664, 0.381],
+      ["#l-g10", 6.545, 0.443],
+      ["#l-g11", 7.008, 0.443],
+      ["#l-g12", 7.471, 0.231],
+      ["#l-g13", 7.702, 0.563],
+      ["#l-g14", 8.515, 0.663],
+      ["#l-g15", 9.198, 0.783],
+      ["#l-g16", 10.231, 0.733],
+      ["#l-g17", 10.984, 0.431],
+      ["#l-g18", 11.435, 0.301],
+      ["#l-g19", 11.736, 0.301],
+      ["#l-g20", 12.037, 0.552],
+      ["#l-g21", 12.839, 0.488],
+      ["#l-g22", 13.347, 0.487],
+      ["#l-g23", 13.854, 0.439],
+      ["#l-g24", 15.093, 0.649],
+      ["#l-g25", 16.242, 0.513],
+      ["#l-g26", 16.775, 0.356],
+      ["#l-g27", 17.131, 0.513],
+      ["#l-g28", 17.664, 0.355],
+      ["#l-g29", 18.019, 0.355],
+      ["#l-g30", 18.374, 0.691],
+      ["#l-g31", 19.085, 0.691],
+      ["#l-g32", 19.796, 0.355],
+      ["#l-g33", 20.151, 0.691],
+      ["#l-g34", 20.862, 0.356],
+      ["#l-g35", 21.218, 0.455],
+      ["#l-g36", 21.923, 0.414],
+      ["#l-g37", 22.357, 0.414],
+      ["#l-g38", 22.791, 0.534],
+      ["#l-g39", 23.425, 0.398],
+      ["#l-g40", 23.843, 0.727],
+      ["#l-g41", 25.370, 0.609],
+      ["#l-g42", 26.479, 0.658],
+      ["#l-g43", 27.157, 0.226],
+      ["#l-g44", 27.383, 0.883],
+      ["#l-g45", 28.286, 0.552],
+      ["#l-g46", 29.638, 0.549],
+      ["#l-g47", 30.687, 0.250],
+      ["#l-g48", 30.937, 0.375],
+      ["#l-g49", 31.312, 0.376],
+      ["#l-g50", 31.688, 0.250],
+      ["#l-g51", 31.938, 0.605],
+      ["#l-g52", 32.563, 0.251],
+      ["#l-g53", 32.814, 0.480],
+      ["#l-g54", 33.314, 0.375],
+      ["#l-g55", 33.689, 0.251],
+      ["#l-g56", 33.940, 0.600],
+      ["#l-g57", 35.540, 0.400],
+      ["#l-g58", 35.960, 0.731],
+      ["#l-g59", 36.891, 0.517],
+      ["#l-g60", 37.428, 0.785],
+      ["#l-g61", 38.233, 1.173]
+    ];
+    grupos.forEach(([id, ini, dur]) => {
+      const fim = ini + dur;
+      tl.fromTo(id, { opacity: 0, scale: 0.86, transformOrigin: "50% 60%" }, { opacity: 1, scale: 1, duration: 0.1, ease: "power2.out" }, ini);
+      tl.to(id, { opacity: 0, duration: 0.05, ease: "power1.in" }, fim - 0.05);
+    });
+    window.__timelines["legendas"] = tl;
+  </script>
+</template>

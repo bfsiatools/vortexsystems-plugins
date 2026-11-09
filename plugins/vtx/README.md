@@ -1,4 +1,4 @@
-﻿# Plugin `vtx`
+# Plugin `vtx`
 
 Ferramentas da VTX Tap para quem vende e implanta. Faz parte do marketplace [`vortexsystems`](../../README.md).
 
@@ -21,8 +21,8 @@ Ou, dentro de uma sessão do Claude Code: `/plugin install vtx --marketplace bfs
 
 1. Com o plugin instalado, abra um projeto seu.
 2. Digite `/vtx:landing-page`.
-3. Responda: a casa, a logo, o(s) dono(s) e quem fechou o contrato. Na primeira vez a skill cadastra a pessoa (nome, **foto**, **WhatsApp**) em `landing-pages/equipe/`.
-4. A skill gera e confere a página. Você recebe o caminho de `landing-pages/saida/<casa>-unico.html`: um arquivo só, que abre com dois cliques e serve para mandar por WhatsApp ou e-mail.
+3. Responda: a casa, a logo, o(s) dono(s), quem fechou o contrato e **se quer o vídeo dos próximos passos** (com "sim", mande também o print da página da casa no VTX Tap; com "não", a página sai igual, sem vídeo). Na primeira vez a skill cadastra a pessoa (nome, **foto**, **WhatsApp**) em `landing-pages/equipe/`.
+4. A skill gera o vídeo (2 a 3 minutos, só se você quis), gera e confere a página. Você recebe o caminho de `landing-pages/saida/<casa>-unico.html`: um arquivo só, que abre com dois cliques e serve para mandar por WhatsApp ou e-mail.
 
 ## O que a skill nunca faz
 
@@ -36,6 +36,7 @@ Tudo o que é de cliente ou de pessoa fica em `landing-pages/`, na pasta do **se
 
 - Python 3 (`py` no Windows).
 - Chrome ou Edge, opcional: fotos de conferência da página.
+- Para o vídeo: Node.js (`npx`), ffmpeg e internet na primeira vez.
 - Playwright, opcional: `verificar-navegador.cjs` (rolagem, cliques e vídeo).
 
 ## Testar o plugin
